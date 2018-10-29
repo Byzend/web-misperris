@@ -1,0 +1,30 @@
+{% extends 'core/home.html'%}
+{% load static %}
+
+
+
+
+{% for mascota in mascotas  %}
+
+ <div class="mascotas" >
+
+    <div>
+        <h2>{{mascota.title}}</h2>
+    </div>
+
+    <div>
+        <img src="{{mascota.image.url}}" alt="">  
+    </div>
+      
+    <div>
+        <p>{{mascota.description}}</p>
+    </div>
+
+ </div>
+
+
+
+{% endfor %}
+
+<div id="Volver"><a href="{% url 'base' %}">Volver</a></div>
+
