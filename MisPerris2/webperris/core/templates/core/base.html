@@ -72,11 +72,30 @@
                                 
                         </ul>
                         <ul id="menu4">
-                                <li id="contacto"><a href="{% url 'form' %}">Formulario</a></li>  
+                                {% if not request.user.is_authenticated %}
+
+                                <li>
+                                    <a href="{% url 'login' %}">Acceder</a>
+    
+                                </li>
+    
+    
+                            {% else %}
+                                
+                                <li>
+                                    <a href="{% url 'logout' %}">Salir</a>
+    
+                                </li>
+                            {% endif %}
+                                <!--<li id="contacto"><a href="{% url 'form' %}">Formulario</a></li>--> 
                         </ul>
+
+                      
             
             
                 </div>
+
+
 
 
         </nav>

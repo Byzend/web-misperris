@@ -4,9 +4,7 @@ from django.db import models
 class Mascota(models.Model):
     title = models.CharField(max_length=50 ,verbose_name ="Nombre")
     description = models.TextField(verbose_name="Descripión")
-    image = models.ImageField(verbose_name ="Foto", upload_to= "imgMascotas")
-    raza = models.CharField(max_length=50 ,verbose_name ="Raza")
-    estado = models.CharField(max_length=50 ,verbose_name ="Estado")
+    image = models.ImageField(verbose_name ="Foto", upload_to= "imgMascotas") 
     created = models.DateTimeField(auto_now_add=True ,verbose_name ="Fecha de creación")
     updated = models.DateTimeField(auto_now=True, verbose_name ="Fecha de edición")
 

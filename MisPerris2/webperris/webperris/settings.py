@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'mascota.apps.MascotaConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,8 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+#auth redirects
+
+LOGIN_REDIRECT_URL ="base"
+LOGOUT_REDIRECT_URL ="login"
