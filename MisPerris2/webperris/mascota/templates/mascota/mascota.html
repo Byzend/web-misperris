@@ -37,7 +37,87 @@
 </head>
 <body>
 
-        <header id="Formulario_header"><img src="{% static 'core/img/logo.png' %}" alt=""></header>
+    <header >
+           
+                       
+        <h1>
+            <figure>
+                <img src="{% static 'core/img/logo.png' %}" alt="">
+            </figure>
+        </h1>
+
+         
+
+
+        
+
+        <nav id="menu">
+
+                <div>
+
+            
+                        <ul id="menu1" >
+                            <li id="inicio"><a href="{% url 'base' %}">Inicio</a></li>                            
+                                       
+                            
+                        </ul>
+                        <ul id="menu2">
+                               <li id="quien"><a href="{% url 'base' %}">Quienes somos</a></li>
+
+                               
+                                
+                        </ul>
+                        <ul id="menu3">
+                                
+                                    {% if not request.user.is_authenticated %}
+        
+                                    <li>
+                                        <a href="{% url 'signup' %}">Registro</a>
+            
+                                    </li>
+            
+            
+                                    {% else %}
+                                    
+
+                                        <li id="servicio"><a href="{% url 'pet' %}">Mascotas</a></li>                                   
+
+                                    
+                                        
+                                    {% endif %}
+                                
+                                
+                        </ul>
+                        <ul id="menu4">
+                                {% if not request.user.is_authenticated %}
+
+                                <li>
+                                    <a href="{% url 'login' %}">Acceder</a>
+    
+                                </li>
+    
+    
+                            {% else %}
+                                
+                                <li>
+                                    <a href="{% url 'logout' %}">Salir</a>
+    
+                                </li>
+                            {% endif %}
+                                <!--<li id="contacto"><a href="{% url 'form' %}">Formulario</a></li>--> 
+                        </ul>
+
+                      
+            
+            
+                </div>
+
+
+
+
+        </nav>
+
+    </header>
 
 
 <h1>Mascotas</h1>
