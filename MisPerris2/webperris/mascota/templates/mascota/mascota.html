@@ -83,7 +83,7 @@
                                 
                 <td>{{ mascota.Estado }}</td>
 
-                <td><figure><img src="{{mascota.image.url}}" alt="">  </figure></td>
+                <td><figure ><img src="{{mascota.image.url}}" alt="" >  </figure></td>
 
                 <td>{{ mascota.description}}</td>
                 
@@ -149,7 +149,14 @@
 
 
 {% endfor %}-->
-
+{% if request.user.is_staff %} 
+<div id="Volver"><a href="http://127.0.0.1:8000/admin/mascota/mascota/">Editar</a></div>
+{% endif %}
 
 <div id="Volver"><a href="{% url 'base' %}">Volver</a></div>
+
+    
+
+
+
 
