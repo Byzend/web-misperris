@@ -64,11 +64,30 @@
                             
                         </ul>
                         <ul id="menu2">
-                                <li id="quien"><a href="{% url 'base' %}">Quienes somos</a></li>
+                               <li id="quien"><a href="{% url 'base' %}">Quienes somos</a></li>
+
+                               
                                 
                         </ul>
                         <ul id="menu3">
-                                <li id="servicio"><a href="{% url 'pet' %}">Mascotas</a></li>
+                                
+                                    {% if not request.user.is_authenticated %}
+        
+                                    <li>
+                                        <a href="{% url 'signup' %}">Registro</a>
+            
+                                    </li>
+            
+            
+                                    {% else %}
+                                    
+
+                                        <li id="servicio"><a href="{% url 'pet' %}">Mascotas</a></li>                                   
+
+                                    
+                                        
+                                    {% endif %}
+                                
                                 
                         </ul>
                         <ul id="menu4">
