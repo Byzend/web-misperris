@@ -1,5 +1,7 @@
 
 {% load static %}
+
+<!--
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,8 +38,64 @@
 <h1>Mascotas</h1>
 
     
+
+
+
+<table>
+
+        
+        <thead>
+                <tr>
+                    <th >Nombre |</td>
+                       
+                    <th >Raza de mascota|</td>  
+                             
+                    <th >Su estado |</td>
+
+                    <th>Foto</td>   
+                        
+                    <th>Descripción</td>    
+                    
+                    
+        
+        
+                </tr>
+        </thead>
+
+
+        <tbody>
     
-{% for mascota in mascotas  %}
+            
+            {% for mascota in mascotas %}
+    
+            <tr>
+                <td>{{ mascota.title }}</td>
+                
+                
+                <td>{{ mascota.raza }}</td>
+
+                
+                                
+                <td>{{ mascota.Estado }}</td>
+
+                <td><figure><img src="{{mascota.image.url}}" alt="">  </figure></td>
+
+                <td>{{ mascota.description}}</td>
+                
+                
+            </tr>
+    
+            {% endfor %}
+            
+    
+    
+        </tbody>
+    
+    
+    
+    </table>
+
+ {% for mascota in mascotas  %}
 
 <div>
 
@@ -55,13 +113,17 @@
 
 </div>  <br>
 
-{% endfor %}
-  
+{% endfor %}  
+    
+
+  {% if request.user.is_staff %} 
+  {% endif %}
+    
       
 
-    
+
 <div id="Volver"><a href="{% url 'base' %}">Volver</a></div>
-    
+
     
 </body>
-</html>
+</html>-->

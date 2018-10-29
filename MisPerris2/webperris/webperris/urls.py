@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path ,include
 from core import views as core_views
-from mascota import views as mascota_views
+from mascota import views as mascota_views 
 
 from django.conf import settings
 
@@ -25,10 +25,12 @@ urlpatterns = [
     path('form/',core_views.form, name="form"),
     path('pet/',mascota_views.mascota, name="pet"),
     
+    
     path('admin/', admin.site.urls),
 
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('registration.urls')),
+    
 ]
 
 

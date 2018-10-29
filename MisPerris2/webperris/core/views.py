@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+
 
 
 
@@ -8,6 +9,8 @@ def form(request):
 
 def base(request):
     return render(request, "core/base.html")
+
+
 
 
 
